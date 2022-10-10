@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.cts.tweetapp.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.562 s - in com.cts.tweetapp.DemoApplicationTests
