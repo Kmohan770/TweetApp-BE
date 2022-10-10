@@ -37,7 +37,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Slf4j
 @RequestMapping("/api/v1.0/tweets")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://tweetapp-fe.azurewebsites.net")
 public class TweetController {
 
 	@Autowired
