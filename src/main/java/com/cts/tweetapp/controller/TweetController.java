@@ -23,7 +23,7 @@ import com.cts.tweetapp.exception.DataException;
 import com.cts.tweetapp.exception.TweetNotFoundException;
 import com.cts.tweetapp.exception.UserExistException;
 import com.cts.tweetapp.exception.UserNotFoundException;
-import com.cts.tweetapp.messaging.TopicProducer;
+//import com.cts.tweetapp.messaging.TopicProducer;
 import com.cts.tweetapp.security.jwt.JwtUtils;
 import com.cts.tweetapp.service.TweetService;
 import com.cts.tweetapp.service.UserService;
@@ -46,8 +46,8 @@ public class TweetController {
 	@Autowired
 	public UserService userService;
 
-	@Autowired
-	private TopicProducer producer;
+//	@Autowired
+//	private TopicProducer producer;
 	
 	@Autowired
 	private JwtUtils jwtUtils;
@@ -131,11 +131,11 @@ public class TweetController {
 		if(isJwtValid) {
 			TweetUtils.logAsJson("[POST] Add new tweet for " + userName, tweet);
 			tweet.setUserName(userName);
-			ObjectMapper mapper = new ObjectMapper();
-			String message = mapper.writeValueAsString(tweet);
-			producer.sendMessage(message);
-			return new TweetDto(null, "Tweet Posted Successfully", 0);
-//			return tweetService.postTweet(tweet);
+//			ObjectMapper mapper = new ObjectMapper();
+//			String message = mapper.writeValueAsString(tweet);
+//			producer.sendMessage(message);
+//			return new TweetDto(null, "Tweet Posted Successfully", 0);
+			return tweetService.postTweet(tweet);
 		}
 		throw new JwtException(TOKEN_EXPIRED_OR_INVALID);
 	}
